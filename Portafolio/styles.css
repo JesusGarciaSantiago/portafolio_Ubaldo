@@ -1,0 +1,127 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+.container {
+    display: flex;
+    min-height: 100vh;
+    position: relative;
+}
+
+.sidebar {
+    width: 20%;
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    box-sizing: border-box;
+    transition: width 0.3s ease;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+}
+
+.sidebar.hidden {
+    width: 0;
+    padding: 0;
+}
+
+.toggle-button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    position: fixed;
+    top: 20px;
+    left: 20%;
+    z-index: 1000;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    transition: left 0.3s ease;
+}
+
+.sidebar.hidden + .toggle-button {
+    left: 10px;
+}
+
+/* Estilo del logo */
+.logo {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    width: 100px;
+    height: auto;
+    z-index: 1000;
+}
+
+.job-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+.job-list.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.job-list li {
+    margin-bottom: 10px;
+}
+
+.job-list li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.job-list li a:hover {
+    color: #ff9800;
+}
+
+.content {
+    margin-left: 20%;
+    padding: 20px;
+    box-sizing: border-box;
+    width: 80%;
+    transition: margin-left 0.3s ease;
+}
+
+.content.expanded {
+    margin-left: 0;
+    width: 100%;
+}
+
+.profile {
+    text-align: center;
+}
+
+.profile-pic {
+    max-width: 300px;
+    width: 50%;
+    height: auto;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.interests {
+    margin-top: 30px;
+}
+
+.interest-img {
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    border-radius: 10px;
+}
