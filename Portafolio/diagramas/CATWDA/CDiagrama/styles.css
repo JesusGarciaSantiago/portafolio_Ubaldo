@@ -1,0 +1,128 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #007bff;
+    box-sizing: border-box;
+}
+
+.logo {
+    width: 100px;
+    /* La posición del logo se mantiene como estaba */
+}
+
+.volver-btn {
+    background-color: #6c757d; /* Color de fondo gris */
+    color: white;
+    padding: 10px;
+    border: none; /* Quitar el borde azul */
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    position: relative; /* Mantén la posición original */
+}
+
+.volver-btn:hover {
+    background-color: #5a6268; /* Cambio de color al pasar el ratón */
+}
+
+main {
+    width: 100%;
+    max-width: 600px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+h1, h2, h3 {
+    color: #333;
+}
+
+form, .diagram-container {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.section {
+    margin-bottom: 20px;
+    width: 100%;
+    text-align: left;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"] {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button[type="submit"] {
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.diagram-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 800px;
+    margin-top: 20px;
+}
+
+.diagram-box {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+}
+
+/* Colores para cada sección del CATWDA */
+.section-c {
+    background-color: #f8d7da; /* Rojo claro para Contexto */
+}
+
+.section-a {
+    background-color: #d4edda; /* Verde claro para Actores */
+}
+
+.section-t {
+    background-color: #d1ecf1; /* Azul claro para Transformación */
+}
+
+.section-w {
+    background-color: #fff3cd; /* Amarillo claro para Cosmovisión */
+}
+
+.section-d {
+    background-color: #d6d8d9; /* Gris claro para Donante */
+}
+
+.section-a:last-of-type {
+    background-color: #f0e68c; /* Amarillo para Afectados */
+}

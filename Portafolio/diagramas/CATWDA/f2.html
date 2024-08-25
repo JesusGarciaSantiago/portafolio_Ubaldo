@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario CATWDA</title>
+    <link rel="stylesheet" href="../CATWDA/CDiagrama/styles.css">
+</head>
+<body>
+    <header>
+        <img src="../logo/logo.webp" alt="Logo" class="logo">
+        <!-- Asegúrate de que el botón de volver tenga el tipo "button" -->
+        <button class="volver-btn" type="button" onclick="volver()">Volver</button>
+    </header>
+    
+    <main>
+        <h1>Formulario para Diagrama CATWDA</h1>
+        <form id="catwdaForm" action="../CATWDA/CDiagrama/CATWDA.html" method="get">
+            <label for="problematica">Nombre de la problemática:</label>
+            <input type="text" id="problematica" name="problematica" required>
+
+            <h2>Componentes del Diagrama CATWDA</h2>
+
+            <!-- Contexto -->
+            <div class="section">
+                <h3>Contexto (C)</h3>
+                <label for="c1">Componente 1:</label>
+                <input type="text" id="c1" name="c1" required>
+                <label for="c2">Componente 2:</label>
+                <input type="text" id="c2" name="c2" required>
+            </div>
+
+            <!-- Actores -->
+            <div class="section">
+                <h3>Actores (A)</h3>
+                <label for="a1">Componente 1:</label>
+                <input type="text" id="a1" name="a1" required>
+                <label for="a2">Componente 2:</label>
+                <input type="text" id="a2" name="a2" required>
+            </div>
+
+            <!-- Transformación -->
+            <div class="section">
+                <h3>Transformación (T)</h3>
+                <label for="t1">Componente 1:</label>
+                <input type="text" id="t1" name="t1" required>
+                <label for="t2">Componente 2:</label>
+                <input type="text" id="t2" name="t2" required>
+            </div>
+
+            <!-- Cosmovisión -->
+            <div class="section">
+                <h3>Cosmovisión (W)</h3>
+                <label for="w1">Componente 1:</label>
+                <input type="text" id="w1" name="w1" required>
+                <label for="w2">Componente 2:</label>
+                <input type="text" id="w2" name="w2" required>
+            </div>
+
+            <!-- Donante -->
+            <div class="section">
+                <h3>Donante (D)</h3>
+                <label for="d1">Componente 1:</label>
+                <input type="text" id="d1" name="d1" required>
+                <label for="d2">Componente 2:</label>
+                <input type="text" id="d2" name="d2" required>
+            </div>
+
+            <!-- Afectados -->
+            <div class="section">
+                <h3>Afectados (A)</h3>
+                <label for="a3">Componente 1:</label>
+                <input type="text" id="a3" name="a3" required>
+                <label for="a4">Componente 2:</label>
+                <input type="text" id="a4" name="a4" required>
+            </div>
+
+            <button type="submit">Enviar</button>
+        </form>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

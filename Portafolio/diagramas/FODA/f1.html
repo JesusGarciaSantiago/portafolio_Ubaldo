@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Análisis FODA</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="../logo/logo.webp" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <button class="volver" onclick="volver()">Volver</button>
+            <img src="../logo/logo.webp" alt="Logo" class="logo">
+        </div>
+    </header>
+
+    <main>
+        <h1>Formulario de Análisis FODA</h1>
+        <form id="fodaForm" onsubmit="return false;">
+            <div class="form-group">
+                <label for="problematica">Nombre de la Problemática:</label>
+                <input type="text" id="problematica" name="problematica" required>
+            </div>
+
+            <fieldset>
+                <legend>Fortalezas</legend>
+                <input type="text" name="fortaleza1" placeholder="Fortaleza 1" required>
+                <input type="text" name="fortaleza2" placeholder="Fortaleza 2" required>
+            </fieldset>
+
+            <fieldset>
+                <legend>Debilidades</legend>
+                <input type="text" name="debilidad1" placeholder="Debilidad 1" required>
+                <input type="text" name="debilidad2" placeholder="Debilidad 2" required>
+            </fieldset>
+
+            <fieldset>
+                <legend>Amenazas</legend>
+                <input type="text" name="amenaza1" placeholder="Amenaza 1" required>
+                <input type="text" name="amenaza2" placeholder="Amenaza 2" required>
+            </fieldset>
+
+            <fieldset>
+                <legend>Oportunidades</legend>
+                <input type="text" name="oportunidad1" placeholder="Oportunidad 1" required>
+                <input type="text" name="oportunidad2" placeholder="Oportunidad 2" required>
+            </fieldset>
+
+            <button type="button" onclick="generarDiagrama()">Generar Diagrama</button>
+        </form>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
