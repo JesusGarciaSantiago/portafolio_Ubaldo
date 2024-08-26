@@ -1,0 +1,121 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7f9;
+    margin: 0;
+    padding: 0;
+}
+
+.back-button {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+    background-color: #0056b3;
+}
+
+.logo {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.diagram-container {
+    max-width: 900px;
+    margin: 100px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.diagram-container:hover {
+    transform: scale(1.02);
+}
+
+.diagram-container h1 {
+    margin-bottom: 40px;
+    color: #333;
+    font-size: 28px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.hat-section {
+    margin-bottom: 30px;
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+    text-align: left;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hat-section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.hat-section i {
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    font-size: 100px;
+    opacity: 0.1;
+}
+
+.hat-section h2 {
+    margin-top: 0;
+    font-size: 22px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.hat-section p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.white-hat {
+    background: linear-gradient(to right, #ffffff, #e0e0e0);
+    color: #333;
+    border: 2px solid #ddd;
+}
+
+.red-hat {
+    background: linear-gradient(to right, #ff4b5c, #ff6f7d);
+}
+
+.black-hat {
+    background: linear-gradient(to right, #2c3e50, #4a4a4a);
+}
+
+.yellow-hat {
+    background: linear-gradient(to right, #f7b733, #f4d03f);
+}
+
+.green-hat {
+    background: linear-gradient(to right, #38ef7d, #11998e);
+}
+
+.blue-hat {
+    background: linear-gradient(to right, #56ccf2, #2f80ed);
+}

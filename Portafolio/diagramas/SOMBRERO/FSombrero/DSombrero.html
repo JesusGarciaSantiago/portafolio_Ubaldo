@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diagrama de Sombrero para Pensar</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOMARET23dwP3LgPZy6pR/zQ9i/hy4Io+fj44g2x" crossorigin="anonymous">
+    <link rel="icon" href="../FSombrero/logo/logo.webp" type="image/x-icon">
+</head>
+<body>
+    <!-- Botón de volver -->
+    <button class="back-button" onclick="goBack()"><i class="fas fa-arrow-left"></i> Volver</button>
+
+    <!-- Logo en la esquina superior derecha -->
+    <img src="../FSombrero/logo/logo.webp" alt="Logo" class="logo">
+
+    <div class="diagram-container">
+        <h1>Diagrama de Sombrero para Pensar</h1>
+        <div id="diagramContent"></div>
+    </div>
+
+    <script>
+        // Función para volver a la página anterior
+        function goBack() {
+            window.location.href="../f5.html";
+        }
+
+        // Obtener los datos del localStorage
+        const whiteHat = localStorage.getItem('whiteHat');
+        const redHat = localStorage.getItem('redHat');
+        const blackHat = localStorage.getItem('blackHat');
+        const yellowHat = localStorage.getItem('yellowHat');
+        const greenHat = localStorage.getItem('greenHat');
+        const blueHat = localStorage.getItem('blueHat');
+
+        const hats = [
+            { color: 'Sombrero Blanco', text: whiteHat, colorClass: 'white-hat' },
+            { color: 'Sombrero Rojo', text: redHat, colorClass: 'red-hat' },
+            { color: 'Sombrero Negro', text: blackHat, colorClass: 'black-hat' },
+            { color: 'Sombrero Amarillo', text: yellowHat, colorClass: 'yellow-hat' },
+            { color: 'Sombrero Verde', text: greenHat, colorClass: 'green-hat' },
+            { color: 'Sombrero Azul', text: blueHat, colorClass: 'blue-hat' },
+        ];
+
+        const diagramContent = document.getElementById('diagramContent');
+
+        // Crear el diagrama con los datos
+        hats.forEach(hat => {
+            const hatSection = document.createElement('div');
+            hatSection.classList.add('hat-section', hat.colorClass);
+            
+            const hatIcon = document.createElement('i');
+            hatIcon.classList.add('fas', 'fa-hat-cowboy-side'); // Icono de sombrero
+            hatSection.appendChild(hatIcon);
+
+            const hatTitle = document.createElement('h2');
+            hatTitle.textContent = hat.color;
+            hatSection.appendChild(hatTitle);
+
+            const hatContent = document.createElement('p');
+            hatContent.textContent = hat.text;
+            hatSection.appendChild(hatContent);
+
+            diagramContent.appendChild(hatSection);
+        });
+    </script>
+</body>
+</html>

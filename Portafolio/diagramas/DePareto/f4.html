@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario para Diagrama de Pareto</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <button onclick="goBack()" class="back-button">Volver</button>
+        <img src="../logo/logo.webp" alt="Logo" class="logo">
+    </header>
+
+    <main>
+        <h1>Formulario para Diagrama de Pareto</h1>
+        <form id="paretoForm" onsubmit="submitForm(event)">
+            <!-- Campo para el nombre del problema principal -->
+            <div class="form-group">
+                <label for="problema">Nombre del Problema Principal</label>
+                <input type="text" id="problema" name="problema" required>
+            </div>
+            
+            <!-- Contenedor para causas y escala Likert -->
+            <div class="form-container">
+                <!-- Causas -->
+                <div class="causas">
+                    <h2>Causas del Problema Principal</h2>
+                    <div class="form-group">
+                        <label for="causa1">Causa 1</label>
+                        <input type="text" id="causa1" name="causa1" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="causa2">Causa 2</label>
+                        <input type="text" id="causa2" name="causa2" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="causa3">Causa 3</label>
+                        <input type="text" id="causa3" name="causa3" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="causa4">Causa 4</label>
+                        <input type="text" id="causa4" name="causa4" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="causa5">Causa 5</label>
+                        <input type="text" id="causa5" name="causa5" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="causa6">Causa 6</label>
+                        <input type="text" id="causa6" name="causa6" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="causa7">Causa 7</label>
+                        <input type="text" id="causa7" name="causa7" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="causa8">Causa 8</label>
+                        <input type="text" id="causa8" name="causa8" required>
+                    </div>
+                </div>
+
+                <!-- Escala de Likert para evaluar la importancia de cada causa -->
+                <div class="likert">
+                    <h2>Evaluación de Importancia (Escala de Likert)</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Causa</th>
+                                <th>1</th>
+                                <th>2</th>
+                                <th>3</th>
+                                <th>4</th>
+                                <th>5</th>
+                                <th>6</th>
+                                <th>7</th>
+                                <th>8</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Filas para cada causa -->
+                            <tr>
+                                <td>Causa 1</td>
+                                <td><input type="radio" name="importance1" value="1" onclick="blockColumn(this)" required></td>
+                                <td><input type="radio" name="importance1" value="2" onclick="blockColumn(this)"></td>
+                                <td><input type="radio" name="importance1" value="3" onclick="blockColumn(this)"></td>
+                                <td><input type="radio" name="importance1" value="4" onclick="blockColumn(this)"></td>
+                                <td><input type="radio" name="importance1" value="5" onclick="blockColumn(this)"></td>
+                                <td><input type="radio" name="importance1" value="6" onclick="blockColumn(this)"></td>
+                                <td><input type="radio" name="importance1" value="7" onclick="blockColumn(this)"></td>
+                                <td><input type="radio" name="importance1" value="8" onclick="blockColumn(this)"></td>
+                            </tr>
+                            <!-- Continuar con las demás filas para cada causa... -->
+                            <tr>
+                                <td>Causa 2</td>
+                                <td><input type="radio" name="importance2" value="1" onclick="blockColumn(this)" required></td>
+                                <td><input type="radio" name="importance2" value="2" onclick="blockColumn(this)"></td>
+                                <td><input type="radio" name="importance2" value="3" onclick="blockColumn(this)"></td>
+                                <td><input type="radio" name="importance2" value="4" onclick="blockColumn(this)"></td>
+                                <td><input type="radio" name="importance2" value="5" onclick="blockColumn(this)"></td>
+                                <td><input type="radio" name="importance2" value="6" onclick="blockColumn(this)"></td>
+                                <td><input type="radio" name="importance2" value="7" onclick="blockColumn(this)"></td>
+                                <td><input type="radio" name="importance2" value="8" onclick="blockColumn(this)"></td>
+                            </tr>
+                            <!-- Repetir para todas las causas -->
+                            <tr>
+                                <td>Causa 3</td>
+                                <td><input type="radio" name="importance3" value="1" onclick="blockColumn(this)" required></td>
+                                <td><input type="radio" name="importance3" value="2" onclick="blockColumn(this)"></td>
+                                <td><input type="radio" name="importance3" value="3" onclick="blockColumn(this)"></td>
+                                <td><input type="radio" name="importance3" value="4" onclick="blockColumn(this)"></td>
+                                <td><input type="radio" name="importance3" value="5" onclick="blockColumn(this)"></td>
+                                <td><input type="radio" name="importance3" value="6" onclick="blockColumn(this)"></td>
+                                <td><input type="radio" name="importance3" value="7" onclick="blockColumn(this)"></td>
+                                <td><input type="radio" name="importance3" value="8" onclick="blockColumn(this)"></td>
+                            </tr>
+                            <!-- Continuar con las demás causas -->
+                            <tr>
+                                <td>Causa 4</td>
+                                <td><input type="radio" name="importance4" value="1" onclick="blockColumn(this)" required></td>
+                                <td><input type="radio" name="importance4" value="2" onclick="blockColumn(this)"></td>
+                                <td><input type="radio" name="importance4" value="3" onclick="blockColumn(this)"></td>
+                                <td><input type="radio" name="importance4" value="4" onclick="blockColumn(this)"></td>
+                                <td><input type="radio" name="importance4" value="5" onclick="blockColumn(this)"></td>
+                                <td><input type="radio" name="importance4" value="6" onclick="blockColumn(this)"></td>
+                                <td><input type="radio" name="importance4" value="7" onclick="blockColumn(this)"></td>
+                                <td><input type="radio" name="importance4" value="8" onclick="blockColumn(this)"></td>
+                            </tr>
+                            <tr>
+                                <td>Causa 5</td>
+                                <td><input type="radio" name="importance5" value="1" onclick="blockColumn(this)" required></td>
+                                <td><input type="radio" name="importance5" value="2" onclick="blockColumn(this)"></td>
+                                <td><input type="radio" name="importance5" value="3" onclick="blockColumn(this)"></td>
+                                <td><input type="radio" name="importance5" value="4" onclick="blockColumn(this)"></td>
+                                <td><input type="radio" name="importance5" value="5" onclick="blockColumn(this)"></td>
+                                <td><input type="radio" name="importance5" value="6" onclick="blockColumn(this)"></td>
+                                <td><input type="radio" name="importance5" value="7" onclick="blockColumn(this)"></td>
+                                <td><input type="radio" name="importance5" value="8" onclick="blockColumn(this)"></td>
+                            </tr>
+                            <tr>
+                                <td>Causa 6</td>
+                                <td><input type="radio" name="importance6" value="1" onclick="blockColumn(this)" required></td>
+                                <td><input type="radio" name="importance6" value="2" onclick="blockColumn(this)"></td>
+                                <td><input type="radio" name="importance6" value="3" onclick="blockColumn(this)"></td>
+                                <td><input type="radio" name="importance6" value="4" onclick="blockColumn(this)"></td>
+                                <td><input type="radio" name="importance6" value="5" onclick="blockColumn(this)"></td>
+                                <td><input type="radio" name="importance6" value="6" onclick="blockColumn(this)"></td>
+                                <td><input type="radio" name="importance6" value="7" onclick="blockColumn(this)"></td>
+                                <td><input type="radio" name="importance6" value="8" onclick="blockColumn(this)"></td>
+                            </tr>
+                            <tr>
+                                <td>Causa 7</td>
+                                <td><input type="radio" name="importance7" value="1" onclick="blockColumn(this)" required></td>
+                                <td><input type="radio" name="importance7" value="2" onclick="blockColumn(this)"></td>
+                                <td><input type="radio" name="importance7" value="3" onclick="blockColumn(this)"></td>
+                                <td><input type="radio" name="importance7" value="4" onclick="blockColumn(this)"></td>
+                                <td><input type="radio" name="importance7" value="5" onclick="blockColumn(this)"></td>
+                                <td><input type="radio" name="importance7" value="6" onclick="blockColumn(this)"></td>
+                                <td><input type="radio" name="importance7" value="7" onclick="blockColumn(this)"></td>
+                                <td><input type="radio" name="importance7" value="8" onclick="blockColumn(this)"></td>
+                            </tr>
+                            <tr>
+                                <td>Causa 8</td>
+                                <td><input type="radio" name="importance8" value="1" onclick="blockColumn(this)" required></td>
+                                <td><input type="radio" name="importance8" value="2" onclick="blockColumn(this)"></td>
+                                <td><input type="radio" name="importance8" value="3" onclick="blockColumn(this)"></td>
+                                <td><input type="radio" name="importance8" value="4" onclick="blockColumn(this)"></td>
+                                <td><input type="radio" name="importance8" value="5" onclick="blockColumn(this)"></td>
+                                <td><input type="radio" name="importance8" value="6" onclick="blockColumn(this)"></td>
+                                <td><input type="radio" name="importance8" value="7" onclick="blockColumn(this)"></td>
+                                <td><input type="radio" name="importance8" value="8" onclick="blockColumn(this)"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <button type="submit">Generar Diagrama</button>
+        </form>
+    </main>
+
+    <script src="../DePareto/script.js"></script>
+</body>
+</html>

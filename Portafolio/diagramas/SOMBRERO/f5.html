@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario Diagrama de Sombrero para Pensar</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="../logo/logo.webp" type="image/x-icon">
+</head>
+<body>
+    <!-- Botón de volver -->
+    <button class="back-button" onclick="goBack()">Volver</button>
+
+    <!-- Logo en la esquina superior derecha -->
+    <img src="../logo/logo.webp" alt="Logo" class="logo">
+
+    <!-- Formulario -->
+    <div class="form-container">
+        <h1>Crear Diagrama de Sombrero para Pensar</h1>
+        <form id="thinkingHatForm">
+            <label for="whiteHat">Sombrero Blanco:</label>
+            <textarea id="whiteHat" name="whiteHat" placeholder="Hechos, datos, información objetiva..." required></textarea>
+
+            <label for="redHat">Sombrero Rojo:</label>
+            <textarea id="redHat" name="redHat" placeholder="Emociones, sentimientos, intuición..." required></textarea>
+
+            <label for="blackHat">Sombrero Negro:</label>
+            <textarea id="blackHat" name="blackHat" placeholder="Juicio, precaución, riesgos..." required></textarea>
+
+            <label for="yellowHat">Sombrero Amarillo:</label>
+            <textarea id="yellowHat" name="yellowHat" placeholder="Beneficios, optimismo, positividad..." required></textarea>
+
+            <label for="greenHat">Sombrero Verde:</label>
+            <textarea id="greenHat" name="greenHat" placeholder="Creatividad, ideas nuevas, alternativas..." required></textarea>
+
+            <label for="blueHat">Sombrero Azul:</label>
+            <textarea id="blueHat" name="blueHat" placeholder="Control, gestión del proceso, organización..." required></textarea>
+
+            <!-- Botón para generar el diagrama -->
+            <button type="button" onclick="generateDiagram()">Generar Diagrama</button>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario Ishikawa</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="../logo/logo.webp" type="image/x-icon">
+</head>
+<body>
+    <!-- Botón de Volver -->
+    <a href="../diagramas.html" class="back-button">Volver</a>
+
+    <!-- Logo en la esquina superior derecha -->
+    <img src="../logo/logo.webp" alt="Logo" class="logo">
+
+    <!-- Formulario para datos del diagrama de Ishikawa -->
+    <div class="container">
+        <h1>Crear Diagrama de Ishikawa</h1>
+        <form id="ishikawaForm">
+            <label for="problema">Problema Principal:</label>
+            <input type="text" id="problema" name="problema" required><br><br>
+
+            <label for="categoria1">Categoría 1 (Ej. Personas):</label>
+            <input type="text" id="categoria1" name="categoria1" required><br><br>
+
+            <label for="categoria2">Categoría 2 (Ej. Métodos):</label>
+            <input type="text" id="categoria2" name="categoria2" required><br><br>
+
+            <label for="categoria3">Categoría 3 (Ej. Máquinas):</label>
+            <input type="text" id="categoria3" name="categoria3" required><br><br>
+
+            <label for="categoria4">Categoría 4 (Ej. Materiales):</label>
+            <input type="text" id="categoria4" name="categoria4" required><br><br>
+
+            <label for="categoria5">Categoría 5 (Ej. Medio Ambiente):</label>
+            <input type="text" id="categoria5" name="categoria5" required><br><br>
+
+            <label for="categoria6">Categoría 6 (Ej. Medidas):</label>
+            <input type="text" id="categoria6" name="categoria6" required><br><br>
+
+            <button type="button" onclick="generarDiagrama()">Generar</button>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
