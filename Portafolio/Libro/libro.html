@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Libro</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <button class="back-button" onclick="location.href='../index.html'")'>Volver</button>
+        <img src="../photos/logo.webp" alt="Logo" class="logo">
+    </header>
+
+    <main class="gallery">
+        <!-- Lista de imágenes -->
+        <div class="image-container" onclick="showSummary('El efecto mateo', 'Representa cómo las pequeñas ventajas iniciales pueden convertirse en grandes ventajas a lo largo del tiempo. Podría mostrarse una carrera con niños, donde uno de ellos está ligeramente adelantado y al final se convierte en el ganador absoluto.')">
+            <img src="../Libro/images/i1.webp" alt="Capítulo 1">
+        </div>
+        <div class="image-container" onclick="showSummary('La regla de las 10,000 boras', ' Representa cómo las pequeñas ventajas iniciales pueden convertirse en grandes ventajas a lo largo del tiempo. Podría mostrarse una carrera con niños, donde uno de ellos está ligeramente adelantado y al final se convierte en el ganador absoluto.')">
+            <img src="../Libro/images/i2.webp" alt="Capítulo 2">
+        </div>
+        <div class="image-container" onclick="showSummary('El problema con los genios pt. 1', 'Destaca cómo la inteligencia no siempre se traduce en éxito. Un aula con estudiantes, donde uno destacado parece desconectado, mientras otros participan activamente.')">
+            <img src="../Libro/images/i3.webp" alt="Capítulo 3">
+        </div>
+        <div class="image-container" onclick="showSummary('El problema con los genios pt. 2', 'Resalta la importancia de la inteligencia práctica y las habilidades sociales. Una sala de juntas donde un joven brillante parece aislado, mientras otros discuten animadamente.')">
+            <img src="../Libro/images/i4.webp" alt="Capítulo 4">
+        </div>
+        <div class="image-container" onclick="showSummary('Las tres lecciones de Joe Flom', 'Representa cómo las circunstancias externas pueden impactar el éxito. Un bufete de abogados de los años 60 con un joven abogado trabajando arduamente.')">
+            <img src="../Libro/images/i5.jpg" alt="Capítulo 5">
+        </div>
+        <div class="image-container" onclick="showSummary('Harlan, Kentucky', ' Ilustra la cultura de honor y los conflictos generacionales. Una escena de un pueblo pequeño con dos hombres enfrentados, representando la tensión.')">
+            <img src="../Libro/images/i6.jpg" alt="Capítulo 6">
+        </div>
+        <div class="image-container" onclick="showSummary('Teoría étnica de los accidentes aereos', 'Destaca cómo la comunicación cultural influye en situaciones críticas. La cabina de un avión con dos pilotos, uno comunicando con preocupación y el otro con incomprensión.')">
+            <img src="../Libro/images/i7.jpg" alt="Capítulo 7">
+        </div>
+        <div class="image-container" onclick="showSummary('Arrozales y exámenes de matemáticas', 'Ilustra la importancia de la dedicación y la ética del trabajo en el aprendizaje. Un campo de arroz en Asia con trabajadores, y un niño resolviendo problemas matemáticos.')">
+            <img src="../Libro/images/i8.jpg" alt="Capítulo 8">
+        </div>
+        <div class="image-container" onclick="showSummary('El chollo de Martia', 'Muestra cómo el acceso a oportunidades educativas puede cambiar una vida. Un aula moderna con una joven estudiante enfocada, rodeada de libros y tecnología.')">
+            <img src="../Libro/images/i9.jpg" alt="Capítulo 9">
+        </div>
+        <div class="image-container" onclick="showSummary('Una historia Jamaicana', ' Explora la influencia de la historia personal y las oportunidades. Una escena tropical con una mujer joven trabajando con su familia, mostrando esfuerzo y perseverancia.')">
+            <img src="../Libro/images/i10.jpg" alt="Capítulo 10">
+        </div>
+    </main>
+
+    <!-- Modal para mostrar el resumen -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2 id="modal-title"></h2>
+            <p id="modal-summary"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
