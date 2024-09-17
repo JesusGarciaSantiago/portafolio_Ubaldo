@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El empresario ideal</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <button class="back-button" onclick="volver()">Volver</button>
+        <h1>El empresario ideal</h1>
+        <img src="../photos/logo.webp" alt="Logo" class="logo">
+
+        <div class="silueta-container">
+            <img src="silueta.png" alt="Silueta de Persona" class="silueta" usemap="#mapa-cuerpo">
+            
+            <!-- Divs para mostrar los rectángulos -->
+            <div class="click-area" style="top: 20px; left: 180px; width: 40px; height: 50px;" onclick="mostrarDescripcion('cabeza')"></div>
+            <div class="click-area" style="top: 90px; left: 190px; width: 30px; height: 30px;" onclick="mostrarDescripcion('corazon')"></div>
+            <div class="click-area" style="top: 95px; left: 140px; width: 27px; height: 120px;" onclick="mostrarDescripcion('brazoIzq')"></div>
+            <div class="click-area" style="top: 95px; left: 230px; width: 27px; height: 120px;" onclick="mostrarDescripcion('brazoDer')"></div>
+            <div class="click-area" style="top: 230px; left: 150px; width: 80px; height: 150px;" onclick="mostrarDescripcion('pierna')"></div>
+        </div>
+
+        <div id="descripcion" class="descripcion"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
