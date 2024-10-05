@@ -1,0 +1,113 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%; /* Asegura que el html y el body ocupen el 100% del alto */
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+.container {
+    display: flex;
+    height: 100vh; /* Hace que la altura ocupe el 100% de la pantalla */
+    width: 100vw;  /* Hace que el ancho ocupe el 100% de la pantalla */
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around; /* Espaciado entre los botones */
+    background-color: #333;
+    padding: 20px;
+    width: 20%; /* Aumenta el ancho de las barras laterales para mejor ajuste */
+    height: 100%; /* Asegura que la barra lateral ocupe toda la altura */
+    color: white;
+}
+
+.left {
+    border-right: 2px solid #666; /* Borde que separa la barra izquierda */
+}
+
+.right {
+    border-left: 2px solid #666; /* Borde que separa la barra derecha */
+}
+
+.button {
+    background-color: #444;
+    padding: 20px; /* Aumenta el padding para agrandar los botones */
+    margin: 10px 0;
+    text-align: center;
+    cursor: pointer;
+    border: 2px solid #555;
+    border-radius: 5px;
+    white-space: normal; /* Permite que el texto salte de línea */
+    word-wrap: break-word;
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    background-color: #555;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1; /* Ocupa el espacio restante */
+    background-color: #fff;
+    padding: 20px;
+    height: 100%; /* Asegura que el contenido ocupe toda la altura */
+}
+
+.main-content h1 {
+    font-size: 2.5em;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.image-placeholder {
+    width: 300px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#content {
+    max-width: 80%;
+    text-align: center;
+    height: 100%; /* Ocupa toda la altura del contenido cargado */
+}
+
+/* Botón de regresar en la esquina superior izquierda */
+.back-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: #444;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.back-button:hover {
+    background-color: #555;
+}
+
+/* Logo en la esquina superior derecha */
+.logo {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 100px;
+    height: auto;
+}
+

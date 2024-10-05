@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tan cerca, pero tan diferentes</title>
+    <link rel="stylesheet" href="stylesresum.css">
+    <link rel="icon" href="../photos/logo.webp" type="image/x-icon">
+   
+</head>
+<body>
+    <header>
+        <h1>Capítulo 9: Difusión de la prosperidad</h1>
+    </header>
+
+    <main>
+        <section class="chapter-content">
+            <div class="main-content">
+                <div class="image-placeholder">
+                    <img src="../paises_fracasan/images/i9.jpg" alt="Imagen representativa del capítulo 9">
+                </div>
+                <div id="content"></div>
+            </div>
+
+            <p>
+                Este capítulo analiza cómo las instituciones inclusivas pueden expandirse de un país a otro, aunque el proceso es a menudo difícil y complejo. Los autores dan ejemplos de cómo el crecimiento económico inclusivo en algunos países ha generado presión para que otros sigan el mismo camino, aunque los intereses de las élites extractivas a menudo bloquean el cambio.
+            </p>
+            <p>
+                Las empresas extractivas aquí tienen un papel central en frenar la difusión de instituciones inclusivas. Como las grandes empresas se benefician de sus conexiones con el poder, a menudo son un obstáculo para las reformas que podrían abrir mercados y mejorar la igualdad de oportunidades.
+            </p>
+
+            <h3>Ejemplos y análisis:</h3>
+            <ol>
+                <li><strong>Presión de las élites:</strong> En muchos casos, las élites económicas de un país pueden resistir cambios que amenacen su posición de privilegio. Esto puede manifestarse en oposición a políticas que promuevan la transparencia, la competencia y el acceso equitativo a recursos y oportunidades.</li>
+                <li><strong>Influencia de las instituciones inclusivas:</strong> Los países que han adoptado instituciones inclusivas suelen ser vistos como modelos a seguir. La difusión de buenas prácticas, inversión extranjera y la influencia de organizaciones internacionales pueden facilitar la adopción de políticas inclusivas en países vecinos.</li>
+                <li><strong>Obstáculos para la difusión:</strong> Factores como la corrupción, la falta de educación y el miedo al cambio pueden impedir la implementación de reformas inclusivas. Además, la historia colonial y los conflictos internos pueden dejar legados de desconfianza que dificultan la cooperación y el cambio.</li>
+                <li><strong>Empresas y reformas:</strong> Las empresas que operan dentro de marcos institucionales inclusivos suelen experimentar un mayor crecimiento, innovación y sostenibilidad a largo plazo. Esto demuestra que, a pesar de la resistencia, las reformas pueden llevar a beneficios económicos y sociales significativos.</li>
+            </ol>
+
+            <button onclick="playAudio()">Reproducir Audio</button>
+            <audio id="audio" src="ruta-del-audio.mp3" preload="auto"></audio>
+        </section>
+    </main>
+
+    <footer>
+        <img src="../photos/logo.webp" alt="Logo personal" id="logo">
+        <div class="buttons">
+            <button onclick="goBack()">Regresar</button>
+        </div>
+    </footer>
+
+    <script>
+        // Función para reproducir audio automáticamente
+        function playAudio() {
+            const audio = document.getElementById('audio');
+            audio.play();
+        }
+
+        // Iniciar audio automáticamente al cargar la página
+        window.onload = function() {
+            playAudio();
+        };
+    </script>
+</body>
+</html>
