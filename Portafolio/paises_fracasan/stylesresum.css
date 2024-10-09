@@ -83,7 +83,7 @@ button:hover {
 }
 
 .image-placeholder img {
-    width: 200px; /* Ajusta el tamaño de la imagen */
+    width: 1000px; /* Ajusta el tamaño de la imagen */
     height: auto; /* Mantiene la proporción de la imagen */
 }
 .chapter-content {
