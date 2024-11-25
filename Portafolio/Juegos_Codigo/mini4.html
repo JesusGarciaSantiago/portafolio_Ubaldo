@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memorama de Código Limpio</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            background-color: #f0f4f7;
+            padding: 50px;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(4, 120px);
+            grid-gap: 15px;
+            justify-content: center;
+        }
+        .card {
+            width: 120px;
+            height: 120px;
+            background-color: #1e88e5;
+            color: white;
+            font-size: 18px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+        .flipped {
+            background-color: #42a5f5;
+        }
+        #message {
+            margin-top: 20px;
+            font-size: 20px;
+            color: #333;
+        }
+        #logo {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+        #back-button {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: #f44336;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+        #moves {
+            margin-top: 15px;
+            font-size: 18px;
+            color: #333;
+        }
+        #reset-button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+    </style>
+    <link rel="icon" href="../photos/logo.webp" type="image/x-icon">
+
+</head>
+<body>
+    <button id="back-button" onclick="location.href='../index.html'">Volver</button>
+    <img id="logo" src="../../Portafolio/photos/logo.webp" alt="Logo" width="50">
+
+    <h1>Memorama de Código Limpio</h1>
+    <div class="grid" id="gameGrid"></div>
+    <p id="message"></p>
+    <p id="moves">Movimientos: 0</p>
+    <button id="reset-button" onclick="resetGame()">Reiniciar Juego</button>
+
+    <script>
+        const pairs = [
+            { term: 'DRY', definition: 'Don’t Repeat Yourself' },
+            { term: 'KISS', definition: 'Keep It Simple, Stupid' },
+            { term: 'SOLID', definition: 'Principios de diseño orientado a objetos' },
+            { term: 'YAGNI', definition: 'You Aren’t Gonna Need It' },
+            { term: 'SRP', definition: 'Single Responsibility Principle' },
+            { term: 'OCP', definition: 'Open/Closed Principle' }
+        ];
+
+        let terms = [];
+        let moves = 0;
+        let firstCard = null;
+        let secondCard = null;
+        let lockBoard = false;
+        let matchedPairs = 0;
+
+        function setupGame() {
+            // Crear una lista con términos y definiciones
+            terms = [];
+            pairs.forEach(pair => {
+                terms.push({ text: pair.term, type: 'term' });
+                terms.push({ text: pair.definition, type: 'definition' });
+            });
+            terms.sort(() => 0.5 - Math.random()); // Mezclar cartas
+
+            const gameGrid = document.getElementById('gameGrid');
+            gameGrid.innerHTML = '';
+
+            terms.forEach((term, index) => {
+                const card = document.createElement('div');
+                card.classList.add('card');
+                card.dataset.index = index;
+                card.dataset.type = term.type;
+                card.dataset.text = term.text;
+                card.addEventListener('click', flipCard);
+                gameGrid.appendChild(card);
+            });
+
+            moves = 0;
+            matchedPairs = 0;
+            document.getElementById('moves').textContent = 'Movimientos: ' + moves;
+            document.getElementById('message').textContent = '';
+        }
+
+        function flipCard() {
+            if (lockBoard || this === firstCard || this.textContent !== '') return;
+            this.textContent = this.dataset.text;
+            this.classList.add('flipped');
+            if (!firstCard) {
+                firstCard = this;
+                return;
+            }
+
+            secondCard = this;
+            lockBoard = true;
+            moves++;
+            document.getElementById('moves').textContent = 'Movimientos: ' + moves;
+
+            checkForMatch();
+        }
+
+        function checkForMatch() {
+            const isMatch = isPair(firstCard, secondCard);
+            isMatch ? disableCards() : unflipCards();
+        }
+
+        function isPair(card1, card2) {
+            return (
+                (card1.dataset.type === 'term' && card2.dataset.type === 'definition' && pairsMatch(card1, card2)) ||
+                (card2.dataset.type === 'term' && card1.dataset.type === 'definition' && pairsMatch(card2, card1))
+            );
+        }
+
+        function pairsMatch(card1, card2) {
+            const pair = pairs.find(p => p.term === card1.dataset.text);
+            return pair && pair.definition === card2.dataset.text;
+        }
+
+        function disableCards() {
+            firstCard.removeEventListener('click', flipCard);
+            secondCard.removeEventListener('click', flipCard);
+            matchedPairs++;
+            resetBoard();
+            checkWin();
+        }
+
+        function unflipCards() {
+            setTimeout(() => {
+                firstCard.textContent = '';
+                secondCard.textContent = '';
+                firstCard.classList.remove('flipped');
+                secondCard.classList.remove('flipped');
+                resetBoard();
+            }, 1000);
+        }
+
+        function resetBoard() {
+            [firstCard, secondCard, lockBoard] = [null, null, false];
+        }
+
+        function checkWin() {
+            if (matchedPairs === pairs.length) {
+                document.getElementById('message').textContent = '¡Felicidades! Has encontrado todos los pares.';
+            }
+        }
+
+        function resetGame() {
+            setupGame();
+        }
+
+        setupGame();
+    </script>
+</body>
+</html>

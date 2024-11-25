@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahorcado Código Limpio</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+        .word, .letter {
+            font-size: 30px;
+            display: inline-block;
+            margin: 0 5px;
+        }
+        .message {
+            font-size: 24px;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ahorcado: Principios de Código Limpio</h1>
+    <div id="wordDisplay"></div>
+    <br><br>
+    <div id="message" class="message"></div>
+    <br>
+    <input type="text" id="letterInput" maxlength="1">
+    <button onclick="guessLetter()">Adivinar</button>
+
+    <script>
+        const words = ['CLASES', 'FUNCIONES', 'COMENTARIOS', 'OBJETOS', 'RESPONSABILIDAD'];
+        let selectedWord = words[Math.floor(Math.random() * words.length)];
+        let guessedLetters = Array(selectedWord.length).fill('_');
+        let attempts = 6;
+
+        document.getElementById('wordDisplay').innerHTML = guessedLetters.join(' ');
+
+        function guessLetter() {
+            let input = document.getElementById('letterInput').value.toUpperCase();
+            let message = document.getElementById('message');
+
+            if (selectedWord.includes(input)) {
+                selectedWord.split('').forEach((letter, index) => {
+                    if (letter === input) guessedLetters[index] = letter;
+                });
+                document.getElementById('wordDisplay').innerHTML = guessedLetters.join(' ');
+            } else {
+                attempts--;
+                message.textContent = `Te quedan ${attempts} intentos`;
+            }
+
+            if (attempts === 0) message.textContent = 'Perdiste. La palabra era ' + selectedWord;
+            if (!guessedLetters.includes('_')) message.textContent = '¡Ganaste!';
+        }
+    </script>
+</body>
+</html>

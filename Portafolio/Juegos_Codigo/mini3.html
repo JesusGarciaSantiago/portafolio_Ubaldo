@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trivia Código Limpio</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f4f7;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        h1 {
+            color: #4CAF50;
+        }
+        .container {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            width: 80%;
+            max-width: 600px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .question {
+            font-size: 22px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            margin: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #progress {
+            width: 80%;
+            height: 20px;
+            background-color: #ddd;
+            margin: 20px auto;
+            position: relative;
+        }
+        #progress-bar {
+            width: 0;
+            height: 100%;
+            background-color: #4CAF50;
+        }
+        #timer {
+            font-size: 18px;
+            margin: 10px;
+            color: red;
+        }
+        #logo {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+        #back-button {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: #f44336;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+        #restart-button {
+            margin-top: 20px;
+            background-color: #008CBA;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+            display: none;
+        }
+    </style>
+    <link rel="icon" href="../photos/logo.webp" type="image/x-icon">
+</head>
+<body>
+    <button id="back-button" onclick="location.href='../../Portafolio/index.html'">Volver</button>
+    <img id="logo" src="../../Portafolio/photos/logo.webp" alt="Logo" width="50">
+    
+    <h1>Trivia Código Limpio</h1>
+    <div class="container">
+        <div id="progress">
+            <div id="progress-bar"></div>
+        </div>
+        <p id="timer">Tiempo restante: <span id="time">10</span> segundos</p>
+        <p class="question" id="question"></p>
+        <button onclick="answer(true)">Verdadero</button>
+        <button onclick="answer(false)">Falso</button>
+        <p id="result"></p>
+        <button id="restart-button" onclick="restartGame()">Reiniciar</button>
+    </div>
+
+    <script>
+        const questions = [
+            { question: 'El principio DRY significa "Don\'t Repeat Yourself".', correct: true },
+            { question: 'El código limpio es fácil de leer, pero difícil de modificar.', correct: false },
+            { question: 'Las funciones deben tener múltiples responsabilidades.', correct: false },
+            { question: 'Las clases deben ser grandes para agrupar más lógica.', correct: false },
+            { question: 'Las pruebas unitarias deben ser rápidas y aisladas.', correct: true },
+            { question: 'El principio OCP es parte de SOLID.', correct: true },
+        ];
+
+        let currentQuestion = 0;
+        let score = 0;
+        let timeLeft = 10;
+        let timer;
+
+        function updateProgress() {
+            let progressBar = document.getElementById('progress-bar');
+            progressBar.style.width = ((currentQuestion / questions.length) * 100) + '%';
+        }
+
+        function showQuestion() {
+            document.getElementById('question').textContent = questions[currentQuestion].question;
+            document.getElementById('result').textContent = '';
+            resetTimer();
+            updateProgress();
+        }
+
+        function resetTimer() {
+            clearInterval(timer);
+            timeLeft = 10;
+            document.getElementById('time').textContent = timeLeft;
+            timer = setInterval(function() {
+                timeLeft--;
+                document.getElementById('time').textContent = timeLeft;
+                if (timeLeft <= 0) {
+                    clearInterval(timer);
+                    currentQuestion++;
+                    if (currentQuestion < questions.length) {
+                        showQuestion();
+                    } else {
+                        endGame();
+                    }
+                }
+            }, 1000);
+        }
+
+        function answer(isTrue) {
+            clearInterval(timer);
+            let result = document.getElementById('result');
+            if (isTrue === questions[currentQuestion].correct) {
+                result.textContent = '¡Correcto!';
+                score++;
+            } else {
+                result.textContent = 'Incorrecto.';
+            }
+
+            currentQuestion++;
+            if (currentQuestion < questions.length) {
+                setTimeout(showQuestion, 1000);
+            } else {
+                setTimeout(endGame, 1000);
+            }
+        }
+
+        function endGame() {
+            document.getElementById('question').textContent = `Juego Terminado. Tu puntuación es ${score}/${questions.length}.`;
+            document.getElementById('timer').style.display = 'none';
+            document.getElementById('progress').style.display = 'none';
+            document.querySelectorAll('button:not(#back-button, #restart-button)').forEach(button => button.style.display = 'none');
+            document.getElementById('restart-button').style.display = 'block';
+        }
+
+        function restartGame() {
+            score = 0;
+            currentQuestion = 0;
+            document.getElementById('timer').style.display = 'block';
+            document.getElementById('progress').style.display = 'block';
+            document.querySelectorAll('button:not(#back-button)').forEach(button => button.style.display = 'inline-block');
+            document.getElementById('restart-button').style.display = 'none';
+            showQuestion();
+        }
+
+        showQuestion();
+    </script>
+</body>
+</html>
